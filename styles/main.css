@@ -1,54 +1,174 @@
 /* Estilo principal do alphaMiner.gg */
 
 /* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-{ margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #0D0D0D;
+  color: #F8F5E3;
+  line-height: 1.6;
+  padding-top: 60px;
+}
 
+/* Navbar fixa no topo */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #111;
+  padding: 1rem 2rem;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-body { font-family: 'Courier New', Courier, monospace; background-color: #0D0D0D; color: #F8F5E3; line-height: 1.6; padding-top: 60px; }
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: #C2A86F;
+  cursor: pointer;
+}
 
-/* Navbar fixa no topo */ .navbar { position: fixed; top: 0; width: 100%; background-color: #111; padding: 1rem 2rem; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.7); display: flex; align-items: center; justify-content: space-between; }
+/* Menu padrão (desktop) */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
 
-.menu-toggle { display: none; font-size: 1.5rem; background: none; border: none; color: #C2A86F; cursor: pointer; }
+/* Links */
+.navbar a {
+  color: #C2A86F;
+  text-decoration: none;
+  font-weight: bold;
+}
 
-.nav-links { list-style: none; display: flex; gap: 1.5rem; justify-content: center; }
+.navbar a:hover {
+  text-decoration: underline;
+}
 
-.navbar a { color: #C2A86F; text-decoration: none; font-weight: bold; }
+main {
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+}
 
-.navbar a:hover { text-decoration: underline; }
+h1, h2 {
+  color: #C2A86F;
+  margin-bottom: 1rem;
+}
 
-main { padding: 2rem; max-width: 900px; margin: auto; }
+p, label, input, textarea, table {
+  margin-bottom: 1rem;
+  width: 100%;
+}
 
-h1, h2 { color: #C2A86F; margin-bottom: 1rem; }
+input, textarea {
+  padding: 0.5rem;
+  font-family: inherit;
+  background: #222;
+  border: 1px solid #444;
+  color: #F8F5E3;
+  border-radius: 4px;
+}
 
-p, label, input, textarea, table { margin-bottom: 1rem; width: 100%; }
+button {
+  background-color: #C2A86F;
+  color: #0D0D0D;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+}
 
-input, textarea { padding: 0.5rem; font-family: inherit; background: #222; border: 1px solid #444; color: #F8F5E3; border-radius: 4px; }
+button:hover {
+  background-color: #b0925a;
+}
 
-button { background-color: #C2A86F; color: #0D0D0D; padding: 0.6rem 1.2rem; border: none; font-weight: bold; cursor: pointer; border-radius: 4px; }
+/* Tabela de conquistas */
+.catalogo {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #111;
+  overflow-x: auto;
+  display: block;
+}
 
-button:hover { background-color: #b0925a; }
+.catalogo th, .catalogo td {
+  border: 1px solid #444;
+  padding: 0.5rem;
+  text-align: left;
+  white-space: nowrap;
+}
 
-/* Tabela de conquistas */ .catalogo { width: 100%; border-collapse: collapse; background-color: #111; overflow-x: auto; display: block; }
+.catalogo th {
+  background-color: #222;
+  color: #C2A86F;
+}
 
-.catalogo th, .catalogo td { border: 1px solid #444; padding: 0.5rem; text-align: left; white-space: nowrap; }
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: #111;
+  color: #888;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+}
 
-.catalogo th { background-color: #222; color: #C2A86F; }
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
 
-footer { text-align: center; padding: 2rem; background-color: #111; color: #888; margin-top: 3rem; font-size: 0.9rem; }
+  /* Esconde o menu por padrão */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #111;
+    margin-top: 1rem;
+  }
 
-/* Responsividade */ @media (max-width: 768px) { .menu-toggle { display: block; }
+  /* Mostra quando clicado */
+  .nav-links.active {
+    display: flex;
+  }
 
-.nav-links { flex-direction: column; align-items: center; display: none; width: 100%; background-color: #111; margin-top: 1rem; }
+  .nav-links li {
+    width: 100%;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #222;
+    text-align: center;
+  }
 
-.nav-links.active { display: flex; }
+  main {
+    padding: 1rem;
+  }
 
-.nav-links li { width: 100%; padding: 0.75rem 0; border-bottom: 1px solid #222; text-align: center; }
+  input, textarea, button {
+    width: 100%;
+  }
+}
 
-main { padding: 1rem; }
+@media (max-width: 480px) {
+  body {
+    font-size: 0.95rem;
+  }
 
-input, textarea, button { width: 100%; } }
-
-@media (max-width: 480px) { body { font-size: 0.95rem; }
-
-h1, h2 { font-size: 1.2rem; } }
+  h1, h2 {
+    font-size: 1.2rem;
+  }
+}

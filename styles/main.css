@@ -5,11 +5,11 @@
 { margin: 0; padding: 0; box-sizing: border-box; }
 
 
-body { font-family: 'Courier New', Courier, monospace; background-color: #000; color: #fff; line-height: 1.6; padding-top: 60px; }
+body { font-family: 'Courier New', Courier, monospace; background-color: #0D0D0D; color: #F8F5E3; line-height: 1.6; padding-top: 60px; }
 
 /* Navbar fixa no topo */ .navbar { position: fixed; top: 0; width: 100%; background-color: #111; padding: 1rem 2rem; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.7); }
 
-.navbar ul { list-style: none; display: flex; gap: 1.5rem; justify-content: center; }
+.navbar ul { list-style: none; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
 
 .navbar a { color: #C2A86F; text-decoration: none; font-weight: bold; }
 
@@ -21,17 +21,29 @@ h1, h2 { color: #C2A86F; margin-bottom: 1rem; }
 
 p, label, input, textarea, table { margin-bottom: 1rem; width: 100%; }
 
-input, textarea { padding: 0.5rem; font-family: inherit; background: #222; border: 1px solid #444; color: #fff; border-radius: 4px; }
+input, textarea { padding: 0.5rem; font-family: inherit; background: #222; border: 1px solid #444; color: #F8F5E3; border-radius: 4px; }
 
-button { background-color: #C2A86F; color: #000; padding: 0.6rem 1.2rem; border: none; font-weight: bold; cursor: pointer; border-radius: 4px; }
+button { background-color: #C2A86F; color: #0D0D0D; padding: 0.6rem 1.2rem; border: none; font-weight: bold; cursor: pointer; border-radius: 4px; }
 
 button:hover { background-color: #b0925a; }
 
-/* Tabela de conquistas */ .catalogo { width: 100%; border-collapse: collapse; background-color: #111; }
+/* Tabela de conquistas */ .catalogo { width: 100%; border-collapse: collapse; background-color: #111; overflow-x: auto; display: block; }
 
-.catalogo th, .catalogo td { border: 1px solid #444; padding: 0.5rem; text-align: left; }
+.catalogo th, .catalogo td { border: 1px solid #444; padding: 0.5rem; text-align: left; white-space: nowrap; }
 
 .catalogo th { background-color: #222; color: #C2A86F; }
 
 footer { text-align: center; padding: 2rem; background-color: #111; color: #888; margin-top: 3rem; font-size: 0.9rem; }
+
+/* Responsividade */ @media (max-width: 768px) { .navbar ul { flex-direction: column; align-items: center; }
+
+main { padding: 1rem; }
+
+input, textarea, button { width: 100%; } }
+
+@media (max-width: 480px) { body { font-size: 0.95rem; }
+
+h1, h2 { font-size: 1.2rem; }
+
+.navbar ul { gap: 0.5rem; } }
 

@@ -1,0 +1,37 @@
+/* Estilo principal do alphaMiner.gg */
+
+/* Reset básico */
+
+{ margin: 0; padding: 0; box-sizing: border-box; }
+
+
+body { font-family: 'Courier New', Courier, monospace; background-color: #000; color: #fff; line-height: 1.6; padding-top: 60px; }
+
+/* Navbar fixa no topo */ .navbar { position: fixed; top: 0; width: 100%; background-color: #111; padding: 1rem 2rem; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.7); }
+
+.navbar ul { list-style: none; display: flex; gap: 1.5rem; justify-content: center; }
+
+.navbar a { color: #C2A86F; text-decoration: none; font-weight: bold; }
+
+.navbar a:hover { text-decoration: underline; }
+
+main { padding: 2rem; max-width: 900px; margin: auto; }
+
+h1, h2 { color: #C2A86F; margin-bottom: 1rem; }
+
+p, label, input, textarea, table { margin-bottom: 1rem; width: 100%; }
+
+input, textarea { padding: 0.5rem; font-family: inherit; background: #222; border: 1px solid #444; color: #fff; border-radius: 4px; }
+
+button { background-color: #C2A86F; color: #000; padding: 0.6rem 1.2rem; border: none; font-weight: bold; cursor: pointer; border-radius: 4px; }
+
+button:hover { background-color: #b0925a; }
+
+/* Tabela de conquistas */ .catalogo { width: 100%; border-collapse: collapse; background-color: #111; }
+
+.catalogo th, .catalogo td { border: 1px solid #444; padding: 0.5rem; text-align: left; }
+
+.catalogo th { background-color: #222; color: #C2A86F; }
+
+footer { text-align: center; padding: 2rem; background-color: #111; color: #888; margin-top: 3rem; font-size: 0.9rem; }
+
